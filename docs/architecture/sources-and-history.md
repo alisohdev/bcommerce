@@ -5,7 +5,7 @@ This record distinguishes project authority from external evidence. Checked or r
 ## Authority order
 
 1. The user's locked Bun/Elysia brief and later clarification establish LOCK-01 through LOCK-08.
-2. The user's M0a instruction records conditional orchestrator approval and authorizes documentation only.
+2. The user's M0a instruction authorized documentation only. The subsequent M0a sign-off approved canonical GitHub commit fd05aea9c3dd74e44990573074b89808196e0d0e and authorized the M0b foundation after documentation corrections. M0c and commerce gates remain separate.
 3. The [decision register](decision-register.md) records the resulting statuses and pending approvals.
 4. [Claude's full Review 001](reviews/001-claude-architecture-review.md) is archived verbatim as an independent review. Its recommendations and its readiness statements have no approval authority.
 5. Primary provider and library documentation supplies evidence about capabilities, subject to version-specific verification.
@@ -15,6 +15,8 @@ The prior reconciliation is the source of the proposed BC-ADR drafts, not blanke
 ## Historical references
 
 Review-001/ADR-001 through Review-001/ADR-012 map one-to-one to BC-ADR-001 through BC-ADR-012. The [register](decision-register.md#proposed-adrs-and-historical-aliases) preserves those aliases. P0, P1, P2, and P3 findings retain Claude's identifiers in the [disposition](review-001-disposition.md).
+
+Conversation/ADR-003 records the original optional-customer-authentication decision and maps to ACCEPTED LOCK-04. This mapping was supplied explicitly at M0a sign-off. It is distinct from Review-001/ADR-003 and the unrenumbered BC-ADR-003 inventory proposal.
 
 The archive intentionally retains original recommendations that this architecture modifies or rejects. Read the disposition and register before relying on it.
 

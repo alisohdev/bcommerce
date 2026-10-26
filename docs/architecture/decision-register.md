@@ -59,10 +59,17 @@ Each row identifies a blocked gate. Details and decision owners live in [open de
 | OPEN-04 | UNRESOLVED | Staff roles, auth methods, recovery policy, and admin topology. | Production identity implementation and activation. |
 | OPEN-05 | UNRESOLVED | Hosting connectivity, support window, downtime, retention, RPO, and RTO. | Production deployment and operating commitments. |
 | OPEN-06 | UNRESOLVED | Backend customization ownership and first-client requirements. | Client adapter implementation, not a config-only M0b. |
-| TECH-01 | UNRESOLVED | Immutable Bun lint build, checksums, and validated foundation toolchain pins. Astro-specific integration remains M0c. | M0b toolchain acceptance. |
-| TECH-02 | UNRESOLVED | Selected ORM/Kit pair and actual migration behavior under that pair. | M0b persistence acceptance. |
-| TECH-03 | UNRESOLVED | OpenAPI generation and client fixture compatibility. | M0b contract acceptance. |
 | TECH-04 | UNRESOLVED | Pinned Bun compatibility with the chosen Astro rendering mode. | M0c independent storefront integration acceptance. |
+
+## Verified foundation evidence
+
+These technical proof records satisfy local M0b checks and remain PROPOSED for orchestrator review. They do not accept an entire commerce ADR or close M0c and pre-production gates. The [verification report](../implementation/m0b-verification.md) records executed commands and limitations.
+
+| Identifier | Status | Verified scope | Remaining later work |
+| --- | --- | --- | --- |
+| TECH-01 | PROPOSED | Integrity-pinned stable Bun 1.4.4 and separate native lint canary, strict source checking, browser-only client checking, meaningful negative fixtures, and formatting proof on Windows and Linux. | Orchestrator M0b review, then Astro-specific tooling and complete integration source coverage in M0c. |
+| TECH-02 | PROPOSED | Drizzle ORM 0.45.4, Kit 0.31.11, pg 8.23.1, real PostgreSQL 17.7 migration/session/history/failure proofs, and explicit CLI migration. | Orchestrator M0b review, then old-image rollback, extended compatibility, exceptional DDL, and recovery drills. |
+| TECH-03 | PROPOSED | Deterministic fixture OpenAPI and generated client artifacts with real HTTP validation and cookie/error/union proofs. | Orchestrator M0b review, then independent Astro consumer and extended retained-consumer compatibility. |
 
 ## Identifier policy
 

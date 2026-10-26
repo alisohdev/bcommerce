@@ -82,6 +82,10 @@ At the initial M0a inspection, git status --short --branch failed because this w
 
 Therefore no branch, tracked/untracked comparison, commit-based diff, or clean-working-tree claim is available. [ENV-01](open-decisions.md#technical-and-environment-blockers) records the baseline requirement for later work. File inventory and direct documentation checks establish M0a scope in this workspace.
 
+This paragraph records the original M0a environment. At sign-off, the orchestrator supplied the canonical repository and commit fd05aea9c3dd74e44990573074b89808196e0d0e. Git history and working-tree status are now available, and ENV-01 is resolved in the decision register.
+
+Git stored the archived review with LF line endings at that baseline. Its committed-blob SHA-256 is `951A15F47F99653E7A48AAB25452BBD3CE2338DD3628C92D046ED9EE21D06553`. The original CRLF attachment and original working file retain the D4E67C hash above. Comparing their text after newline normalization shows no content change. These hashes identify different newline representations, not competing architecture versions.
+
 ## Stage boundary
 
 M0a stops for orchestrator review. M0b remains separately gated. The accepted baseline is preserved, all 12 ADRs remain PROPOSED, and unresolved business policies remain visible.

@@ -6,7 +6,7 @@ This directory and [the ADR directory](../adr/README.md) are the authoritative r
 
 The orchestrator approved M0a documentation at canonical commit fd05aea9c3dd74e44990573074b89808196e0d0e on 2026-10-26 and authorized M0b after three documentation corrections. The [register](decision-register.md#repository-and-authorization-baseline) records the repository, historical alias, and authority. Authorization covers the technical foundation, not every proposed ADR or any commerce implementation gate.
 
-M0b verification results must be recorded separately. The original M0a validation report remains historical documentation evidence. M0c integration and pre-production hardening require separate gates in [implementation gates](implementation-gates.md).
+M0b [verification results](../implementation/m0b-verification.md) record the implemented foundation proof and its limits. The original M0a validation report remains historical documentation evidence. M0c integration and pre-production hardening require separate gates in [implementation gates](implementation-gates.md).
 
 ## Read the architecture
 

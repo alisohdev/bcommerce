@@ -9,3 +9,5 @@ Start with the [architecture documentation](docs/architecture/README.md), the [d
 The locked stack is Bun, Elysia, TypeBox, Better Auth, Drizzle, PostgreSQL, custom Astro storefronts with optional React islands, and a React + Vite dashboard. Engineering uses `bun lint`, `bun fmt`, `bun check`, and strict TypeScript.
 
 M0b implementation and verification stay within the [foundation scope](docs/architecture/implementation-gates.md). Payment, checkout, inventory, and M0c have separate implementation gates.
+
+Use the [M0b setup and commands](docs/implementation/m0b-usage.md) to run the technical foundation. The [verification record](docs/implementation/m0b-verification.md) lists executed checks, exact tool versions, and known limits. The API serves health endpoints; contract routes live only in a separate test fixture application.

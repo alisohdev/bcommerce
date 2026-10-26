@@ -1,0 +1,12 @@
+ts	phase	decision	why	evidence	result
+2026-10-26T08:32:46.5916939+00:00	baseline	Use canonical repository baseline	The orchestrator supplied the reviewed commit	fd05aea9c3dd74e44990573074b89808196e0d0e	local HEAD matched
+2026-10-26T08:32:46.6042939+00:00	documentation	Record corrections before code	Preserve historical authority and separate stage requirements	f743b45	corrections committed
+2026-10-26T08:32:46.6152258+00:00	design	Use API-local infrastructure and independent client	Two workspaces meet scope without an extra infrastructure package	docs/implementation/m0b-design.md	separate native judge agreed
+2026-10-26T08:32:46.6279441+00:00	toolchain	Use stable runtime and separately pinned native lint	Installed 1.4.2 lacks the required builtins	docs/implementation/m0b-verification.md	1.4.4 and lint binary executed
+2026-10-26T08:36:20.0142100+00:00	history	Preserve both review newline representations	Git normalized the original CRLF attachment without changing its text	docs/architecture/documentation-validation.md	committed and attachment hashes distinguished
+2026-10-26T08:42:50.1199929+00:00	tooling	Isolate TypeScript 5 compiler API for OpenAPI generation	Generator peer/API is incompatible with TypeScript 7 runtime API	docs/implementation/m0b-verification.md	generator proof pending
+2026-10-26T08:42:50.1311123+00:00	ci	Avoid assuming Git exists in Bun image	Executed image probe found tar but no git	oven/bun@sha256:1d22548f177f4ff38e0c15baa3c2c46c6c2060ba2d1bc573bb4720b407548f1d	use explicit artifact checks
+2026-10-26T09:02:09.7217145+00:00	verification	Verify the integrated source independently on Windows and Linux	Prove It Works requires executed artifacts rather than owner self-report	2f84641b37260e7074dcc985bdcc0686b21f9573	quality and real PostgreSQL tests passed on both platforms
+2026-10-26T09:02:09.7450575+00:00	container	Exclude nested dependency directories from Docker context	Windows absolute workspace symlinks cannot be copied over Linux dependencies	.dockerignore	rebuilt Linux pipeline passed
+2026-10-26T09:02:09.7528361+00:00	readiness	Run the real container and explicit migration CLI	Health and schema readiness must be observed over HTTP	docs/implementation/m0b-verification.md	live 200; ready 503 before migration and 200 after
+2026-10-26T09:02:09.7596581+00:00	review	Retain the reviewed minimal implementation	Separate native reviewer found no actionable source or comment findings	2f84641b37260e7074dcc985bdcc0686b21f9573	no fixes required

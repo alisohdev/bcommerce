@@ -1,6 +1,6 @@
 # Open decisions and blockers
 
-All identifiers here have status UNRESOLVED. Each blocks only the stated gate. Product decisions have no silently approved defaults. Technical experiments can resolve evidence questions after the relevant work is authorized.
+OPEN identifiers and TECH-04 remain UNRESOLVED. Each blocks only the stated gate. Product decisions have no silently approved defaults. ENV-01 and GATE-M0B were resolved by orchestrator sign-off. TECH-01 through TECH-03 now have executed M0b evidence, recorded in the register and verification report.
 
 ## OPEN-01 Gateway selection and semantics
 
@@ -42,11 +42,10 @@ Confirm whether all backend customization is trusted first-party code and whethe
 
 | Identifier | Owner | Evidence required | Blocked gate |
 | --- | --- | --- | --- |
-| TECH-01 | Technical Lead | Exact Bun runtime/build versions, immutable lint revision/checksum, selected checker, rule fixtures, and Astro tool pins. | M0b toolchain acceptance. |
-| TECH-02 | Technical Lead | Exact ORM/Kit/driver pair, journal semantics, lock behavior, failure recovery, and tested rollback combination. | M0b persistence acceptance. |
-| TECH-03 | Technical Lead | Complete emitted contract and generated client fixture results under pinned tooling. | M0b contract acceptance. |
-| TECH-04 | Technical Lead | Astro rendering mode and adapter behavior under pinned Bun. Explicit evidence before any runtime exception. | M0b storefront acceptance. |
-| ENV-01 | Orchestrator | Select or initialize the intended Git repository and preserve the M0a files. Current workspace has no .git. | Git history, commit, and diff review evidence. |
-| GATE-M0B | Orchestrator | Explicit authorization after M0a review, identifying the permitted work and accepted technical proposals. | Starting M0b. |
+| TECH-04 | Technical Lead | Astro rendering mode and adapter behavior under pinned Bun. Explicit evidence before any runtime exception. | M0c independent storefront acceptance. |
+
+ENV-01 is resolved by the canonical repository alisohdev/bcommerce and reviewed baseline fd05aea9c3dd74e44990573074b89808196e0d0e. The original workspace had no Git metadata during M0a. GATE-M0B is resolved by explicit orchestrator authorization on 2026-10-26. Neither resolution authorizes M0c.
+
+TECH-01 through TECH-03 have satisfied local foundation checks and remain PROPOSED for orchestrator review in the [register](decision-register.md#verified-foundation-evidence). [Executed results](../implementation/m0b-verification.md) cover the pinned tools, real PostgreSQL migration harness, and serialized generated client. Their broader integration obligations remain in M0c and pre-production gates.
 
 The 12 ADRs remain PROPOSED while the register's unresolved entries describe their concrete blockers. Resolving one entry does not approve an entire ADR automatically.

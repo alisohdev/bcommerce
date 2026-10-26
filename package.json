@@ -1,0 +1,38 @@
+{
+  "name": "bcommerce-foundation",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.4.4",
+  "engines": {
+    "bun": "1.4.4"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "toolchain:bootstrap": "bun scripts/bootstrap.ts",
+    "quality:lint": "bun scripts/tool.ts lint lint --no-script --type-aware --max-warnings 0 apps packages scripts",
+    "format:check": "bun scripts/tool.ts stable fmt --no-script --check apps packages scripts fixtures '!fixtures/negative/format.tsx' package.json tsconfig.json bunfig.toml compose.yaml .github",
+    "format:write": "bun scripts/tool.ts stable fmt --no-script apps packages scripts fixtures '!fixtures/negative/format.tsx' package.json tsconfig.json bunfig.toml compose.yaml .github",
+    "typecheck": "bun scripts/tool.ts stable check --no-script",
+    "typecheck:tsc": "bun scripts/tool.ts stable node_modules/typescript/bin/tsc --noEmit",
+    "typecheck:client": "bun scripts/tool.ts stable check --no-script --project packages/api-client/tsconfig.json",
+    "test:negative": "bun scripts/tool.ts stable scripts/negative.ts",
+    "test:unit": "bun scripts/tool.ts stable test apps/api/test/contract.test.ts",
+    "test:db": "bun scripts/tool.ts stable test apps/api/test/database.test.ts --timeout 30000",
+    "contracts:generate": "bun scripts/tool.ts stable apps/api/tools/contracts.ts",
+    "contracts:check": "bun scripts/tool.ts stable apps/api/tools/contracts.ts --check",
+    "quality": "bun scripts/tool.ts stable scripts/quality.ts",
+    "dev": "bun scripts/tool.ts stable --watch apps/api/src/main.ts",
+    "db:migrate": "bun scripts/tool.ts stable apps/api/src/db/migrate-cli.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "1.4.4",
+    "@types/pg": "8.23.1",
+    "@types/react": "19.3.0",
+    "drizzle-kit": "0.31.11",
+    "react": "19.3.1",
+    "typescript": "7.0.2"
+  }
+}

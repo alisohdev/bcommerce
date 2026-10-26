@@ -52,4 +52,4 @@ This is the authoritative assessment of the [archived review](reviews/001-claude
 | OTP abuse | BC-ADR-012 concurrent budget and verification tests. |
 | Worker crash | BC-ADR-004 claim, lease, request, acknowledgement, and replay matrix. |
 
-Claude's M0 readiness section did not authorize project work. Current authority is [M0a only](README.md#current-authorization). The review's release sequence is replaced by the proposed compatibility and release ADRs. Product Owner questions are preserved in [OPEN-01 through OPEN-06](open-decisions.md).
+Claude's M0 readiness section did not authorize project work. Current authority is the [orchestrator's M0b foundation authorization](README.md#current-authorization). The review's release sequence is replaced by the proposed compatibility and release ADRs. Product Owner questions are preserved in [OPEN-01 through OPEN-06](open-decisions.md).

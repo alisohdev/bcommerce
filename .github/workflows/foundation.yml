@@ -1,0 +1,33 @@
+name: Foundation
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  quality:
+    runs-on: ubuntu-24.04
+    container:
+      image: oven/bun@sha256:1d22548f177f4ff38e0c15baa3c2c46c6c2060ba2d1bc573bb4720b407548f1d
+    services:
+      postgres:
+        image: postgres@sha256:2006493727bd5277eece187319af1ef82b4cf82cf4fc1ed00da0775b646ac2a4
+        env:
+          POSTGRES_USER: foundation
+          POSTGRES_PASSWORD: foundation_ci_only
+          POSTGRES_DB: foundation
+        options: >-
+          --health-cmd "pg_isready -U foundation -d foundation"
+          --health-interval 2s --health-timeout 2s --health-retries 30
+    env:
+      DATABASE_ADMIN_URL: postgresql://foundation:foundation_ci_only@postgres:5432/postgres
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - run: bun run toolchain:bootstrap
+      - run: .tools/stable/package/bin/bun install --frozen-lockfile
+      - run: .tools/stable/package/bin/bun run quality
+  image:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - run: docker build --tag bcommerce-m0b:${{ github.sha }} .

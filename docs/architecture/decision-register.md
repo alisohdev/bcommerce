@@ -2,6 +2,17 @@
 
 Recorded on 2026-10-26 during M0a. The [authority and history record](sources-and-history.md) defines the inputs. The [status definitions](README.md#decision-status) apply throughout this documentation.
 
+## Repository and authorization baseline
+
+Canonical repository: [alisohdev/bcommerce](https://github.com/alisohdev/bcommerce).
+
+The orchestrator reviewed and approved M0a at commit [fd05aea9c3dd74e44990573074b89808196e0d0e](https://github.com/alisohdev/bcommerce/commit/fd05aea9c3dd74e44990573074b89808196e0d0e). Local HEAD matched that commit before M0b changes. The original M0a workspace lacked Git metadata; that historical observation remains valid for the earlier stage.
+
+| Identifier | Status | Record | Authority |
+| --- | --- | --- | --- |
+| ENV-01 | ACCEPTED | Resolved by the canonical GitHub repository and reviewed commit above. Git status and history are now available. | Orchestrator M0a sign-off. |
+| GATE-M0B | ACCEPTED | M0b technical foundation is authorized after the documentation corrections. M0c and commerce implementation remain closed. | User's M0a sign-off and M0b authorization on 2026-10-26. |
+
 ## Accepted baseline
 
 The previous reconciliation called these choices LOCKED. Their status here is ACCEPTED, preserving that authority without treating any draft ADR as approved.
@@ -48,17 +59,24 @@ Each row identifies a blocked gate. Details and decision owners live in [open de
 | OPEN-04 | UNRESOLVED | Staff roles, auth methods, recovery policy, and admin topology. | Production identity implementation and activation. |
 | OPEN-05 | UNRESOLVED | Hosting connectivity, support window, downtime, retention, RPO, and RTO. | Production deployment and operating commitments. |
 | OPEN-06 | UNRESOLVED | Backend customization ownership and first-client requirements. | Client adapter implementation, not a config-only M0b. |
-| TECH-01 | UNRESOLVED | Immutable Bun lint build, checksums, and validated toolchain pins. | M0b toolchain acceptance. |
-| TECH-02 | UNRESOLVED | Selected ORM/Kit pair and actual migration behavior under that pair. | M0b persistence acceptance. |
-| TECH-03 | UNRESOLVED | OpenAPI generation and client fixture compatibility. | M0b contract acceptance. |
-| TECH-04 | UNRESOLVED | Pinned Bun compatibility with the chosen Astro rendering mode. | M0b storefront runtime acceptance. |
-| ENV-01 | UNRESOLVED | Workspace has no Git metadata. History and working-tree comparison are unavailable. | Git-based baseline, commit, and review evidence. |
-| GATE-M0B | UNRESOLVED | Separate orchestrator authorization after M0a review. | Starting M0b. |
+| TECH-04 | UNRESOLVED | Pinned Bun compatibility with the chosen Astro rendering mode. | M0c independent storefront integration acceptance. |
+
+## Verified foundation evidence
+
+These technical proof records satisfy local M0b checks and remain PROPOSED for orchestrator review. They do not accept an entire commerce ADR or close M0c and pre-production gates. The [verification report](../implementation/m0b-verification.md) records executed commands and limitations.
+
+| Identifier | Status | Verified scope | Remaining later work |
+| --- | --- | --- | --- |
+| TECH-01 | PROPOSED | Integrity-pinned stable Bun 1.4.4 and separate native lint canary, strict source checking, browser-only client checking, meaningful negative fixtures, and formatting proof on Windows and Linux. | Orchestrator M0b review, then Astro-specific tooling and complete integration source coverage in M0c. |
+| TECH-02 | PROPOSED | Drizzle ORM 0.45.4, Kit 0.31.11, pg 8.23.1, real PostgreSQL 17.7 migration/session/history/failure proofs, and explicit CLI migration. | Orchestrator M0b review, then old-image rollback, extended compatibility, exceptional DDL, and recovery drills. |
+| TECH-03 | PROPOSED | Deterministic fixture OpenAPI and generated client artifacts with real HTTP validation and cookie/error/union proofs. | Orchestrator M0b review, then independent Astro consumer and extended retained-consumer compatibility. |
 
 ## Identifier policy
 
 BC-ADR-001 through BC-ADR-012 are allocated by this register for the new architecture. Future ADRs take the next unused BC-ADR number after checking the register and directory. Never recycle an allocated identifier.
 
 Claude's Review 001 proposed generic ADR-001 through ADR-012. Those names are namespaced above as source aliases. They were never approved project ADR identifiers.
+
+The original conversational ADR-003, optional customer authentication, is preserved as historical alias Conversation/ADR-003 of ACCEPTED LOCK-04. It is not Review-001/ADR-003 and does not change BC-ADR-003, which remains the proposed inventory reservation record. The orchestrator explicitly supplied this historical mapping at M0a sign-off.
 
 Earlier Rust/Axum Better Commerce ADRs are historical work outside this architecture. Their contents and identifiers are not imported, renumbered, or represented as accepted here. Any future imported historical document must retain its original namespace and provenance.

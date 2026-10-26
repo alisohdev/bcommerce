@@ -1,0 +1,322 @@
+{
+  "components": {
+    "schemas": {}
+  },
+  "info": {
+    "description": "Development documentation",
+    "title": "Bcommerce foundation serialization fixture",
+    "version": "0.0.1"
+  },
+  "openapi": "3.1.2",
+  "paths": {
+    "/fixture/echo": {
+      "post": {
+        "description": "Serialization fixture only; integerString has no money or currency semantics.",
+        "operationId": "echoFixture",
+        "parameters": [
+          {
+            "in": "cookie",
+            "name": "fixture",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "integerString": {
+                        "pattern": "^(0|[1-9][0-9]*)$",
+                        "type": "string"
+                      },
+                      "kind": {
+                        "const": "text",
+                        "type": "string"
+                      },
+                      "note": {
+                        "type": "string"
+                      },
+                      "nullable": {
+                        "type": ["string", "null"]
+                      },
+                      "text": {
+                        "minLength": 1,
+                        "type": "string"
+                      }
+                    },
+                    "required": ["kind", "text", "nullable", "integerString"],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "count": {
+                        "anyOf": [
+                          {
+                            "default": 0,
+                            "format": "integer",
+                            "type": "string"
+                          },
+                          {
+                            "minimum": 0,
+                            "type": "integer"
+                          }
+                        ],
+                        "minimum": 0
+                      },
+                      "kind": {
+                        "const": "count",
+                        "type": "string"
+                      }
+                    },
+                    "required": ["kind", "count"],
+                    "type": "object"
+                  }
+                ]
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "integerString": {
+                        "pattern": "^(0|[1-9][0-9]*)$",
+                        "type": "string"
+                      },
+                      "kind": {
+                        "const": "text",
+                        "type": "string"
+                      },
+                      "note": {
+                        "type": "string"
+                      },
+                      "nullable": {
+                        "type": ["string", "null"]
+                      },
+                      "text": {
+                        "minLength": 1,
+                        "type": "string"
+                      }
+                    },
+                    "required": ["kind", "text", "nullable", "integerString"],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "count": {
+                        "anyOf": [
+                          {
+                            "default": 0,
+                            "format": "integer",
+                            "type": "string"
+                          },
+                          {
+                            "minimum": 0,
+                            "type": "integer"
+                          }
+                        ],
+                        "minimum": 0
+                      },
+                      "kind": {
+                        "const": "count",
+                        "type": "string"
+                      }
+                    },
+                    "required": ["kind", "count"],
+                    "type": "object"
+                  }
+                ]
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "integerString": {
+                        "pattern": "^(0|[1-9][0-9]*)$",
+                        "type": "string"
+                      },
+                      "kind": {
+                        "const": "text",
+                        "type": "string"
+                      },
+                      "note": {
+                        "type": "string"
+                      },
+                      "nullable": {
+                        "type": ["string", "null"]
+                      },
+                      "text": {
+                        "minLength": 1,
+                        "type": "string"
+                      }
+                    },
+                    "required": ["kind", "text", "nullable", "integerString"],
+                    "type": "object"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "count": {
+                        "anyOf": [
+                          {
+                            "default": 0,
+                            "format": "integer",
+                            "type": "string"
+                          },
+                          {
+                            "minimum": 0,
+                            "type": "integer"
+                          }
+                        ],
+                        "minimum": 0
+                      },
+                      "kind": {
+                        "const": "count",
+                        "type": "string"
+                      }
+                    },
+                    "required": ["kind", "count"],
+                    "type": "object"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "integerString": {
+                          "pattern": "^(0|[1-9][0-9]*)$",
+                          "type": "string"
+                        },
+                        "kind": {
+                          "const": "text",
+                          "type": "string"
+                        },
+                        "note": {
+                          "type": "string"
+                        },
+                        "nullable": {
+                          "type": ["string", "null"]
+                        },
+                        "text": {
+                          "minLength": 1,
+                          "type": "string"
+                        }
+                      },
+                      "required": ["kind", "text", "nullable", "integerString"],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "count": {
+                          "anyOf": [
+                            {
+                              "default": 0,
+                              "format": "integer",
+                              "type": "string"
+                            },
+                            {
+                              "minimum": 0,
+                              "type": "integer"
+                            }
+                          ],
+                          "minimum": 0
+                        },
+                        "kind": {
+                          "const": "count",
+                          "type": "string"
+                        }
+                      },
+                      "required": ["kind", "count"],
+                      "type": "object"
+                    }
+                  ]
+                }
+              }
+            },
+            "description": "Response for status 200"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "code": {
+                      "enum": [
+                        "invalid_request",
+                        "fixture_rejected",
+                        "invalid_response"
+                      ],
+                      "type": "string"
+                    },
+                    "kind": {
+                      "const": "error",
+                      "type": "string"
+                    }
+                  },
+                  "required": ["kind", "code"],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Response for status 422"
+          }
+        }
+      }
+    },
+    "/fixture/error": {
+      "get": {
+        "operationId": "rejectFixture",
+        "responses": {
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "code": {
+                      "enum": [
+                        "invalid_request",
+                        "fixture_rejected",
+                        "invalid_response"
+                      ],
+                      "type": "string"
+                    },
+                    "kind": {
+                      "const": "error",
+                      "type": "string"
+                    }
+                  },
+                  "required": ["kind", "code"],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Response for status 409"
+          }
+        }
+      }
+    }
+  }
+}

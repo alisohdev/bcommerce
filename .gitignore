@@ -1,2 +1,9 @@
 # graft's local graph cache — regenerable, not committed (run `graft build`).
 /graft/
+node_modules/
+.tools/
+.env
+.env.*
+!.env.example
+coverage/
+*.tsbuildinfo

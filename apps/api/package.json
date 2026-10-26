@@ -1,0 +1,17 @@
+{
+  "name": "@bcommerce/api",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@bcommerce/api-client": "workspace:*",
+    "openapi-typescript": "7.13.0",
+    "typescript": "5.9.3"
+  },
+  "dependencies": {
+    "@elysiajs/openapi": "1.4.16",
+    "@sinclair/typebox": "0.34.52",
+    "drizzle-orm": "0.45.4",
+    "elysia": "1.4.30",
+    "pg": "8.23.1"
+  }
+}
